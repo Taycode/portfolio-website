@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My portfolio website</title>
+    <link rel="stylesheet" href="{% static 'css/boot_css/bootstrap.min.css' %}">
+</head>
+<body>
+<nav>
+    <ul>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'contact_me' %}">Contact me</a></li>
+            <li><a href="{%url 'Dashboard'%}">Dashboard</a></li>
+        {% else %}
+            <li><a href="{%url 'login'%}">Login</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% block body_block %}
+
+{% endblock %}
+</body>
+</html>

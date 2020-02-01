@@ -1,0 +1,5 @@
+{% extends 'app1/base.html'%}
+{% block body_block %}
+{% for contact in contact_list %}
+    <h2><a href="{% url 'phone_number_detail' pk=phone.pk %}">{{contact.phone_number}}</a></h2>
+{endblock}
